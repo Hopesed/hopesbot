@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 
 junr = 0
+url = '[Кликни](https://animego.org/anime?sort=r.rating&direction=desc)'
 
 bot = telebot.TeleBot('5491001070:AAEY0KpGGrscT8zBqNU7xg2sx9JnMRR-a44')
 
@@ -19,7 +20,8 @@ def start(message):
 @bot.message_handler(content_types=['text'])
 def func(message):
     if (message.text == "Аниме по рейтингу"):
-         bot.send_message(message.chat.id, text="сам смотри")
+        bot.send_message(message.chat.id, text="сам смотри")
+        bot.send_message(message.chat.id, url, parse_mode='MarkdownV2')
     elif (message.text == "Аниме по жанру"):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         back = types.KeyboardButton('Назад')
@@ -101,6 +103,9 @@ def func(message):
 
     else:
         bot.send_message(message.chat.id, text="кнопки жми олух")
+
+
+bot.polling(none_stop=True)
 
 
 bot.polling(none_stop=True)
