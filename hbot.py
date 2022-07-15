@@ -4,7 +4,7 @@ from telebot import types
 junr = 0
 url = '[Кликни](https://animego.org/anime?sort=r.rating&direction=desc)'
 
-bot = telebot.TeleBot('5491001070:AAEY0KpGGrscT8zBqNU7xg2sx9JnMRR-a44')
+bot = telebot.TeleBot('token')
 
 
 @bot.message_handler(commands=['start'])
