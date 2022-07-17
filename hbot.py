@@ -106,6 +106,3 @@ def func(message):
 
 
 bot.polling(none_stop=True)
-
-
-bot.polling(none_stop=True)
